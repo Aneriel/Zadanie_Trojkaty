@@ -14,6 +14,7 @@ else
 {
     Console.WriteLine($"obwód = {bokPierwszy + bokDrugi + bokTrzeci}");
     Console.WriteLine($"pole ={Math.Sqrt(obwodTrojkataDziel * (obwodTrojkataDziel - bokPierwszy)*(obwodTrojkataDziel - bokDrugi)*(obwodTrojkataDziel - bokTrzeci) )} ");
+    Console.WriteLine($"Test testu");
 
     if (bokTrzeci == bokPierwszy && bokDrugi == bokPierwszy)
     {
