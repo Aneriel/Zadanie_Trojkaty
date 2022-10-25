@@ -7,7 +7,7 @@ double bokTrzeci = double.Parse(Console.ReadLine());
 double obwodTrojkataDziel = (bokPierwszy + bokDrugi + bokTrzeci)/2;
 double pole = Math.Round(Math.Sqrt(obwodTrojkataDziel * (obwodTrojkataDziel - bokPierwszy)*(obwodTrojkataDziel - bokDrugi)*(obwodTrojkataDziel - bokTrzeci)),2 );
 
-
+Console.WriteLine("Coś wyjebało");
 if (bokPierwszy > bokDrugi + bokTrzeci|| bokDrugi > bokPierwszy + bokTrzeci || bokTrzeci > bokDrugi + bokPierwszy)
 {
     Console.Write("Błędne dane. Trójkąta nie można zbudować!");
@@ -15,11 +15,12 @@ if (bokPierwszy > bokDrugi + bokTrzeci|| bokDrugi > bokPierwszy + bokTrzeci || b
 else
 {
     Console.WriteLine($"obwód = {bokPierwszy + bokDrugi + bokTrzeci}");
-    Console.WriteLine($"pole ={pole} ");
-    Console.WriteLine($"Test testu");
+    Console.WriteLine($"pole = {pole} ");
 
     if (bokTrzeci == bokPierwszy && bokDrugi == bokPierwszy)
     {
         Console.WriteLine("trójkąt równoboczny");
     }
-} ;
+} 
+;
+ 
