@@ -1,4 +1,6 @@
-﻿//double boki[] = consol
+﻿string bokiStr = Console.ReadLine();
+string[] bokiArr =bokiStr.Split(';',' ');
+double boki = double.Parse(bokiStr);
 Console.Write("Podaj pierwszy bok trójkąta:");
 double bokPierwszy = double.Parse(Console.ReadLine());
 Console.Write("Podaj drugi bok trójkąta:");
@@ -19,7 +21,7 @@ else
     Console.WriteLine($"pole = {pole} ");
         if ((bokPierwszy * bokPierwszy) + (bokDrugi * bokDrugi) == (bokTrzeci * bokTrzeci)||(bokTrzeci * bokTrzeci) + (bokDrugi * bokDrugi) == (bokPierwszy * bokPierwszy)||(bokPierwszy * bokPierwszy) + (bokTrzeci * bokTrzeci) == (bokDrugi * bokDrugi))
             {
-            Console.WriteLine("trójkąt jest prostokątny")
+            Console.WriteLine("trójkąt jest prostokątny");
             }
         else if((bokPierwszy * bokPierwszy) + (bokDrugi * bokDrugi) < (bokTrzeci * bokTrzeci)||(bokTrzeci * bokTrzeci) + (bokDrugi * bokDrugi) < (bokPierwszy * bokPierwszy)||(bokPierwszy * bokPierwszy) + (bokTrzeci * bokTrzeci) < (bokDrugi * bokDrugi))
         {
@@ -27,7 +29,7 @@ else
         }
         else
         {
-            Console.WriteLine("Trójkąt jest ostrokątny")
+            Console.WriteLine("Trójkąt jest ostrokątny");
         }
 
         if (bokTrzeci == bokPierwszy && bokDrugi == bokPierwszy)
