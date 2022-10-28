@@ -1,29 +1,23 @@
-﻿string bokiStr = Console.ReadLine();
-string[] bokiArr =bokiStr.Split(';',' ');
-double boki = double.Parse(bokiStr);
-Console.Write("Podaj pierwszy bok trójkąta:");
-double bokPierwszy = double.Parse(Console.ReadLine());
-Console.Write("Podaj drugi bok trójkąta:");
-double bokDrugi = double.Parse(Console.ReadLine());
-Console.Write("Podaj trzeci bok trójkąta:");
-double bokTrzeci = double.Parse(Console.ReadLine());
-double obwodTrojkataDziel = (bokPierwszy + bokDrugi + bokTrzeci)/2;
-double pole = Math.Round(Math.Sqrt(obwodTrojkataDziel * (obwodTrojkataDziel - bokPierwszy)*(obwodTrojkataDziel - bokDrugi)*(obwodTrojkataDziel - bokTrzeci)),2 );
+﻿// See https://aka.ms/new-console-template for more information
+string  wejscie = Console.ReadLine;
+int[] bok = Array.ConvertAll<string, int>(wejscie.Split(" "), int.Parse);
+double obwodTrojkataDziel = (bok[0] + bok[1] + bok[2])/2;
+double pole = Math.Round(Math.Sqrt(obwodTrojkataDziel * (obwodTrojkataDziel - bok[0])*(obwodTrojkataDziel - bok[1])*(obwodTrojkataDziel - bok[2])),2 );
 
-if (bokPierwszy>=0 || bokDrugi>=0 || bokTrzeci >= 0) { 
-if (bokPierwszy > bokDrugi + bokTrzeci|| bokDrugi > bokPierwszy + bokTrzeci || bokTrzeci > bokDrugi + bokPierwszy)
+if (bok[0]>=0 || bok[1]>=0 || bok[2] >= 0) { 
+if (bok[0] > bok[1] + bok[2]|| bok[1] > bok[0] + bok[2] || bok[2] > bok[1] + bok[0])
 {
     Console.Write("Błędne dane. Trójkąta nie można zbudować!");
 }
 else
 {
-    Console.WriteLine($"obwód = {bokPierwszy + bokDrugi + bokTrzeci}");
+    Console.WriteLine($"obwód = {bok[0] + bok[1] + bok[2]}");
     Console.WriteLine($"pole = {pole} ");
-        if ((bokPierwszy * bokPierwszy) + (bokDrugi * bokDrugi) == (bokTrzeci * bokTrzeci)||(bokTrzeci * bokTrzeci) + (bokDrugi * bokDrugi) == (bokPierwszy * bokPierwszy)||(bokPierwszy * bokPierwszy) + (bokTrzeci * bokTrzeci) == (bokDrugi * bokDrugi))
+        if ((bok[0] * bok[0]) + (bok[1] * bok[1]) == (bok[2] * bok[2])||(bok[2] * bok[2]) + (bok[1] * bok[1]) == (bok[0] * bok[0])||(bok[0] * bok[0]) + (bok[2] * bok[2]) == (bok[1] * bok[1]))
             {
             Console.WriteLine("trójkąt jest prostokątny");
             }
-        else if((bokPierwszy * bokPierwszy) + (bokDrugi * bokDrugi) < (bokTrzeci * bokTrzeci)||(bokTrzeci * bokTrzeci) + (bokDrugi * bokDrugi) < (bokPierwszy * bokPierwszy)||(bokPierwszy * bokPierwszy) + (bokTrzeci * bokTrzeci) < (bokDrugi * bokDrugi))
+        else if((bok[0] * bok[0]) + (bok[1] * bok[1]) < (bok[2] * bok[2])||(bok[2] * bok[2]) + (bok[1] * bok[1]) < (bok[0] * bok[0])||(bok[0] * bok[0]) + (bok[2] * bok[2]) < (bok[1] * bok[1]))
         {
             Console.WriteLine("Trójkąt jest rozwartokątny");
         }
@@ -32,7 +26,7 @@ else
             Console.WriteLine("Trójkąt jest ostrokątny");
         }
 
-        if (bokTrzeci == bokPierwszy && bokDrugi == bokPierwszy)
+        if (bok[2] == bok[0] && bok[1] == bok[0])
        {
         Console.WriteLine("trójkąt równoboczny");
             }
